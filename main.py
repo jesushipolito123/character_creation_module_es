@@ -61,7 +61,6 @@ def choice_char_class():
         approve_choice = input('Presiona (Y) para confirmar o cualquier otro botón para seleccionar cualquier otra clase').lower()
     return char_class
 
-
 def main():
     print('¡Saludos, aventurero!')
     print('Antes de comenzar a jugar...')
