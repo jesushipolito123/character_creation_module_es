@@ -1,7 +1,10 @@
 from random import randint
 
+from graphic_arts.start_game_banner import run_screensaver
+
 
 def attack(char_name: str, char_class: str) -> str:
+    """Saca el producto del comando attack dependiendo del personaje."""
     if char_class == 'guerrero':
         return (f'{char_name} causó {5 + randint(3, 5)} de daño al enemigo')
     if char_class == 'mago':
@@ -12,6 +15,7 @@ def attack(char_name: str, char_class: str) -> str:
 
 
 def defense(char_name: str, char_class: str) -> str:
+    """Saca el producto del comando defense dependiendo del personaje."""
     if char_class == 'guerrero':
         return (f'{char_name} bloqueó {10 + randint(5, 10)} de daño')
     if char_class == 'mago':
@@ -22,6 +26,7 @@ def defense(char_name: str, char_class: str) -> str:
 
 
 def special(char_name: str, char_class: str) -> str:
+    """Saca el producto del comando special dependiendo del personaje."""
     if char_class == 'guerrero':
         return (f'{char_name} usó una habilidad especial "Aguante {80 + 25}"')
     if char_class == 'mago':
@@ -32,6 +37,10 @@ def special(char_name: str, char_class: str) -> str:
 
 
 def start_training(char_name: str, char_class: str) -> str:
+    """Empieza el entrenamiento. Imprime el nombre del personaje elegido junto con un string 
+    descriptivo del mismo. Luego, pide al jugador que introduzca uno de los 3 comandos 
+    que activaran las funciones correspondiente a los tipos de ataques que hay. El 
+    programa termina escribiendo "skip"."""
     if char_class == 'warrior':
         print(f'{char_name}, eres un Guerrero, experto en combate cuerpo '
               'a cuerpo.')
@@ -59,6 +68,8 @@ def start_training(char_name: str, char_class: str) -> str:
 
 
 def choice_char_class() -> str:
+    """Comando que sirve para ocnfirmar el personaje elegido y complementa la 
+    informacion del personaje."""
     approve_choice: str = None
     char_class: str = None
     while approve_choice != 'y':
@@ -80,7 +91,9 @@ def choice_char_class() -> str:
     return char_class
 
 
-def main():
+if __name__ == '__main__':
+    """Funcion principal que anida a todas las demas funciones."""    
+    run_screensaver()
     print('¡Saludos, aventurero!')
     print('Antes de comenzar a jugar...')
     char_name: str = input('... indica tu nombre: ')
